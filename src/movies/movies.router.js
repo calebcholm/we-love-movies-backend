@@ -5,6 +5,8 @@ const cors = require('cors');
 
 router.use(cors());
 
+router.route('/:movieId/critics').get(controller.critic).all(methodNotAllowed);
+
 router
   .route('/:movieId/reviews')
   .get(controller.reviewList)
@@ -15,22 +17,8 @@ router
   .get(controller.theaterList)
   .all(methodNotAllowed);
 
-router
-    .route('/:movieId')
-    .get(controller.read)
-    .all(methodNotAllowed);
+router.route('/:movieId').get(controller.read).all(methodNotAllowed);
 
-/*
-router
-  .route('/?is_showing=true')
-  .get(controller.read)
-  .put(controller.update)
-  .delete(controller.delete)
-  .all(methodNotAllowed);
-*/
-router
-  .route('/')
-  .get(controller.list)
-  .all(methodNotAllowed);
+router.route('/').get(controller.list).all(methodNotAllowed);
 
 module.exports = router;

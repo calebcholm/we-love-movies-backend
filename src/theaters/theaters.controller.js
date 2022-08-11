@@ -1,6 +1,5 @@
 const service = require('./theaters.service');
 const asyncErrorBoundary = require('../errors/asyncErrorBoundary');
-const mapProperties = require('../utils/map-properties');
 const reduceProperties = require('../utils/reduce-properties');
 
 async function list(req, res, next) {
