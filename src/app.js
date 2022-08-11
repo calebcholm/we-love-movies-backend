@@ -5,7 +5,7 @@ const app = express();
 //routers
 //const criticsRouter = require('./critics/critics.router');
 const moviesRouter = require('./movies/movies.router');
-//const reviewsRouter = require('./reviews/reviews.router');
+const reviewsRouter = require('./reviews/reviews.router');
 const theatersRouter = require('./theaters/theaters.router');
 
 //errors
@@ -16,7 +16,7 @@ app.use(express.json());
 
 //app.use('/critics', criticsRouter);
 app.use('/movies', moviesRouter);
-//app.use('/reviews', reviewsRouter);
+app.use('/reviews', reviewsRouter);
 app.use('/theaters', theatersRouter);
 
 app.use(errorHandler);
