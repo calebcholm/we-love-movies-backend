@@ -19,8 +19,10 @@
     "test": "jest",
     "test:solution": "docker-compose build && docker-compose run --rm api npm test && docker-compose down"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "heroku"
+  ],
+  "author": "caleb-holm",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
@@ -35,5 +37,8 @@
     "jest": "^26.6.3",
     "nodemon": "^2.0.6",
     "supertest": "^6.1.3"
+  },
+  "engines": {
+    "node": "16.14.2"
   }
 }
