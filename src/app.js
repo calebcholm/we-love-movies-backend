@@ -14,6 +14,7 @@ const notFound = require('./errors/notFound');
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 app.use('/movies', moviesRouter);
 app.use('/reviews', reviewsRouter);
