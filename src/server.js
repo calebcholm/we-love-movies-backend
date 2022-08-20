@@ -9,6 +9,6 @@ knex.migrate
   .latest()
   .then((migrations) => {
     console.log("migrations", migrations);
-    app.listen(PORT, '192.168.0.131');
+    app.listen(PORT, listener);
   })
   .catch(console.error);
