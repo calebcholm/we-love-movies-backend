@@ -20,11 +20,7 @@ module.exports = {
 
   production: {
     client: 'postgresql',
-    connection: {
-      database: 'postgres://snnupumt:Ph5_VVhjghpbR0w1icE3BHa6rCCTyOMA@hansken.db.elephantsql.com/snnupumt',
-      user: 'snnupumt',
-      password: 'Ph5_VVhjghpbR0w1icE3BHa6rCCTyOMA',
-    },
+    connection: DATABASE_URL,
     pool: { min: 0, max: 5 },
     migrations: {
       directory: path.join(__dirname, 'src', 'db', 'migrations'),
