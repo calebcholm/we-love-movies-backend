@@ -7,39 +7,43 @@ const {
 
 module.exports = {
   development: {
-    client: "postgresql",
+    client: 'postgresql',
     connection: DATABASE_URL,
     pool: { min: 0, max: 5 },
     migrations: {
-      directory: path.join(__dirname, "src", "db", "migrations"),
+      directory: path.join(__dirname, 'src', 'db', 'migrations'),
     },
     seeds: {
-      directory: path.join(__dirname, "src", "db", "seeds"),
+      directory: path.join(__dirname, 'src', 'db', 'seeds'),
     },
   },
 
   production: {
-    client: "postgresql",
-    connection: DATABASE_URL,
+    client: 'postgresql',
+    connection: {
+      database: 'postgres://snnupumt:Ph5_VVhjghpbR0w1icE3BHa6rCCTyOMA@hansken.db.elephantsql.com/snnupumt',
+      user: 'snnupumt',
+      password: 'Ph5_VVhjghpbR0w1icE3BHa6rCCTyOMA',
+    },
     pool: { min: 0, max: 5 },
     migrations: {
-      directory: path.join(__dirname, "src", "db", "migrations"),
+      directory: path.join(__dirname, 'src', 'db', 'migrations'),
     },
     seeds: {
-      directory: path.join(__dirname, "src", "db", "seeds"),
+      directory: path.join(__dirname, 'src', 'db', 'seeds'),
     },
   },
 
   test: {
-    client: "sqlite3",
+    client: 'sqlite3',
     connection: {
-      filename: ":memory:",
+      filename: ':memory:',
     },
     migrations: {
-      directory: path.join(__dirname, "src", "db", "migrations"),
+      directory: path.join(__dirname, 'src', 'db', 'migrations'),
     },
     seeds: {
-      directory: path.join(__dirname, "src", "db", "seeds"),
+      directory: path.join(__dirname, 'src', 'db', 'seeds'),
     },
     useNullAsDefault: true,
   },
