@@ -1,10 +1,9 @@
 if (process.env.USER) require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const corsGet = cors({ methods: 'GET' });
 const app = express();
 
-app.use(cors(corsGet)).options(corsGet);
+app.use(cors());
 app.use(express.json());
 
 //routers
