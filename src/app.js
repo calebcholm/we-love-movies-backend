@@ -3,6 +3,14 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
+// .options(corsGet);
+
+// cors({ methods: 'GET' });
+
+app.use(cors());
+app.use(express.json());
+// app.use(express.static('public'));
+
 //routers
 const moviesRouter = require('./movies/movies.router');
 const reviewsRouter = require('./reviews/reviews.router');
@@ -11,10 +19,6 @@ const theatersRouter = require('./theaters/theaters.router');
 //errors
 const errorHandler = require('./errors/errorHandler');
 const notFound = require('./errors/notFound');
-
-app.use(cors());
-app.use(express.json());
-app.use(express.static('public'));
 
 app.use('/movies', moviesRouter);
 app.use('/reviews', reviewsRouter);
