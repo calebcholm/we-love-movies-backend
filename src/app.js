@@ -12,7 +12,7 @@ const theatersRouter = require('./theaters/theaters.router');
 const errorHandler = require('./errors/errorHandler');
 const notFound = require('./errors/notFound');
 
-app.use(cors({ origin: 'https://shielded-hamlet-66106.herokuapp.com' }));
+app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
