@@ -4,6 +4,8 @@ const methodNotAllowed = require('../errors/methodNotAllowed');
 const cors = require('cors');
 const corsGet = cors({ methods: 'GET' });
 
+router.use(cors());
+
 router
   .route('/:movieId/critics')
   .get(corsGet, controller.critic)
