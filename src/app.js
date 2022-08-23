@@ -1,13 +1,14 @@
 if (process.env.USER) require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const corsGet = cors({ methods: 'GET' });
 const app = express();
 
 // .options(corsGet);
 
 // cors({ methods: 'GET' });
 
-app.use(cors());
+app.use(cors(corsGet));
 app.use(express.json());
 // app.use(express.static('public'));
 
