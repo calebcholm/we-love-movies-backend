@@ -1,9 +1,10 @@
-const { PORT = 5000 } = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 const app = require("./app");
 const knex = require("./db/connection");
-
 const listener = () => console.log(`Listening on Port ${PORT}!`);
+
+app.set('port', PORT);
 
 knex.migrate
   .latest()
