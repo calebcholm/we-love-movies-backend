@@ -4,13 +4,8 @@ const cors = require('cors');
 const corsGet = cors({ methods: 'GET' });
 const app = express();
 
-// .options(corsGet);
-
-// cors({ methods: 'GET' });
-
-app.use(cors(corsGet));
+app.use(cors(corsGet)).options(corsGet);
 app.use(express.json());
-// app.use(express.static('public'));
 
 //routers
 const moviesRouter = require('./movies/movies.router');
