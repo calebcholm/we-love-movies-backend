@@ -15,6 +15,7 @@ const theatersRouter = require('./theaters/theaters.router');
 const errorHandler = require('./errors/errorHandler');
 const notFound = require('./errors/notFound');
 
+app.use('/', moviesRouter);
 app.use('/movies', moviesRouter);
 app.use('/reviews', reviewsRouter);
 app.use('/theaters', theatersRouter);
