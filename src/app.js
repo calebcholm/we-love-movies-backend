@@ -2,6 +2,11 @@ if (process.env.USER) require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const corsOptions = {
+    origin: '*',
+    credentials: true,
+    optionSuccessStatus: 200,
+};
 
 //routers
 const moviesRouter = require('./movies/movies.router');
@@ -12,7 +17,7 @@ const theatersRouter = require('./theaters/theaters.router');
 const errorHandler = require('./errors/errorHandler');
 const notFound = require('./errors/notFound');
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.static('public'));
 
