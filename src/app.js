@@ -13,9 +13,6 @@ const errorHandler = require('./errors/errorHandler');
 const notFound = require('./errors/notFound');
 
 app.use(cors({ origin: 'https://shielded-hamlet-66106.herokuapp.com' }));
-app.get('/', (req, res) => {
-    res.send('CORS solved');
-})
 app.use(express.json());
 app.use(express.static('public'));
 
