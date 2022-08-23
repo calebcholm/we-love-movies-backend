@@ -5,6 +5,9 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.get('/', function (req, res, next) {
+    res.sendStatus(200)
+});
 
 //routers
 const moviesRouter = require('./movies/movies.router');
