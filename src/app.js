@@ -5,9 +5,12 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-// app.get('/', function (req, res, next) {
-//     response.status(200).json({  });
-// });
+app.get('/', (req, res) => res.status(301).redirect('/api'));
+app.get('/api', (req, res) =>
+  res.status(200).send({
+    message: 'Welcome to Express Api',
+  })
+);
 
 //routers
 const moviesRouter = require('./movies/movies.router');
