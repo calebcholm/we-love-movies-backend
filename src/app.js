@@ -7,9 +7,9 @@ app.use(cors());
 app.use(express.json());
 app.get('/', (req, res) => res.status(301).redirect('/api'));
 app.get('/api', (req, res) =>
-  res.status(200).send({
-    message: 'Welcome to Express Api',
-  })
+res.status(200).send({
+message: 'Welcome to Express Api',
+}),
 );
 
 //routers
