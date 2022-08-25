@@ -6,11 +6,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.get('/', (req, res) => res.status(301).redirect('/movies'));
-app.get('/api', (req, res) =>
-res.status(200).send({
-message: 'Welcome to Express Api',
-}),
-);
 
 //routers
 const moviesRouter = require('./movies/movies.router');
